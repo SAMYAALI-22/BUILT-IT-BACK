@@ -1,0 +1,97 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, rgb(239, 249, 236) 64%, rgb(173, 199, 173));
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .top-section {
+            display: flex;
+            width: 56%; /* Reduced width to add space on the edges */
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #e6f5e6, #a6cba6);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden;
+        }
+        .top-section div {
+            flex: 12;
+            text-align: center;
+            padding: 12px; /* Reduced padding */
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            font-weight: bold;
+        }
+        .top-section div:hover {
+            background: rgba(213, 220, 210, 0.3);
+            color: white;
+        }
+        .page {
+            position: fixed;
+            top: 100vh;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: top 0.5s ease-in-out;
+        }
+        .content {
+            text-align: center;
+            padding: 1px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 35px;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <div onclick="openPage('page1')">Product</div>
+        <div onclick="openPage('page2')">Review</div>
+        <div onclick="openPage('page3')">Benefits</div>
+        <div onclick="openPage('page4')">Pricing</div>
+        <div onclick="openPage('page5')">Changelog</div>
+    </div>
+    
+    <div class="content">
+        <p>55+ trusted members</p>
+    </div>
+    <h1>Aman Bhaiya is the Boss of this College</h1>
+    <p>We offer flexible saving plans to help you secure your future.</p>
+    <p>We are committed to helping you achieve financial security with tailored saving plans.</p>
+
+    <div id="page1" class="page">Welcome to Section 1</div>
+    <div id="page2" class="page">Welcome to Section 2</div>
+    <a href = "indexp.html">Product</a>
+
+    <script>
+        function openPage(pageId) {
+            document.getElementById(pageId).style.top = '0';
+            setTimeout(() => {
+                document.getElementById(pageId).onclick = function() {
+                    document.getElementById(pageId).style.top = '100vh';
+                }
+            }, 500);
+        }
+        
+    </script>
+</body>
